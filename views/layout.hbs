@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{#if title}} Title - {{title}} {{/if}} | Course Website</title>
+    {{#if css}}
+      <link rel='stylesheet' href='/stylesheets/style.css' />
+      <link rel='stylesheet' href='/stylesheets/animate.min.css' />
+    {{else}}
+      <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+    {{/if}}
+  </head>
+  <body>
+    {{{body}}}
+  </body>
+</html>

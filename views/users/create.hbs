@@ -1,0 +1,33 @@
+<section class="container">
+    <section class="form-container">
+        <form method = "post" novalidate>
+            <section class="form-group text-center"><h1>User Sign up</h1>
+                <p>Please Sign Up To continue</p>
+            </section>
+            <section class="form-group text-center">
+                <span class="glyphicon glyphicon-pencil canvas-img"></span>
+            </section>
+            <section class="form-group">
+                <input type="text" id="txtFirstName" value = "{{input.firstname}}" name ="firstname" class="form-control" placeholder="First Name" tabindex="1" required>
+            </section>
+            <section class="form-group">
+                <input type="text" id="txtLastName" value = "{{input.lastname}}" name ="lastname" class="form-control" placeholder="Last Name" tabindex="2" required>
+            </section>
+            <section class="form-group">
+                <input type="email" id="txtEmail"  value = "{{input.email}}" name = "email" class="form-control" placeholder="E-mail" tabindex="4" required>
+            </section>
+            <section class="form-group">
+                <input type="password" id="txtPassword" name="password" name = "password" class="form-control" placeholder="Password" tabindex="5" required>
+            </section>        
+            <section class="form-group">
+                <input type="submit" id="btnSignup" class="btn btn-primary fullwidth" value="Sign-Up">
+            </section>
+            Already have an account ? <a href="login.html">Sign in</a>
+            <div style = "margin-bottom: 20px;">
+                {{#if error}}
+                        <div class="alert alert-danger">{{error}}</div>
+                {{/if}}
+            </div>
+        </form>
+    </section>
+</section>

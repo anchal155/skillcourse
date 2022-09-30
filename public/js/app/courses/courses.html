@@ -1,0 +1,16 @@
+<div class="form-container">
+  <div class="row">
+      <div class="col-sm-12">
+          <strong ng-show="!vm.courses">Loading...</strong>        
+          <ul>
+      <li ng-repeat="course in vm.courses | orderBy: 'title'">
+            {{course.title}}
+        <a ng-href="{{course.courseUrl}}">
+          <strong ng-bind="course.description"></strong>
+          <span ng-bind="'(' + course.price + ')'"></span>
+        </a>
+      </li>
+    </ul>    
+    </div>          
+  </div>
+   </div>
