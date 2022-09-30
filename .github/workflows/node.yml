@@ -5,13 +5,24 @@ on:
   pull_request:
     branches: [ master ]
 jobs:
+  env: 
+    CI: true
+    MONGO_URL: mongodb://localhost/27017
   build:
+    strategy:
+      matrix: 
+        node-version: [14.x, 16.x]
+        mongodb-version: ['4.4']
     runs-on: ubuntu-latest
-    steps:
-      - add .uses: actions/checkout@v2
-      - name: Use Node.js version
+     steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js version ${{matrix.node-version}}
         uses: actions/setup-node@v2
         with:
-          node-version: '16'
-      -run: npm install
-      -run: npm start
+          node-version: ${{ matrix.node-version }}
+      - name: Use MongoDB from gihub Actions
+        uses: supercharge/mongodb-github-action@1.8.0
+        with: 
+          mongodb-version: ${{ matrix.mongodb-version }}
+      - run: npm install
+      - run: npm start
